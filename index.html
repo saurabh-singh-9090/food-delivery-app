@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello React</title>
+</head>
+
+<body>
+    <div id="root">
+        <!-- NOTE: If we write any HTML tag here, It will get replaced(not appended) by the JSX rendered by the React -->
+    </div>
+
+    <!-- Injecting React in our project through CDNs -->
+    <!-- Core React algorithm file -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <!-- Below URL acts as a bridge between the React and the browser -->
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+ 
+    <!-- NOTE: Below script can't be placed before react cdn script, It will throw an error otherwise -->
+    <script src="./App.js"></script>        
+</body>
+
+</html>
