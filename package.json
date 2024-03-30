@@ -1,0 +1,31 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "This is react-js course",
+  "scripts": {
+    "test": "jest",
+    "start": "rm -rf .parcel-cache && parcel",
+    "build": "rm -rf .parcel-cache && parcel build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saurabh-singh-9090/react-js.git"
+  },
+  "author": "Saurabh Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saurabh-singh-9090/react-js/issues"
+  },
+  "homepage": "https://github.com/saurabh-singh-9090/react-js#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}

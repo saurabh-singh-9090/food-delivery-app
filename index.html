@@ -12,14 +12,18 @@
         <!-- NOTE: If we write any HTML tag here, It will get replaced(not appended) by the JSX rendered by the React -->
     </div>
 
-    <!-- Injecting React in our project through CDNs -->
+    <!-- Injecting React in our project through CDNs (not recommended)-->
+
     <!-- Core React algorithm file -->
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <!-- <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script> -->
+
     <!-- Below URL acts as a bridge between the React and the browser -->
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script> -->
  
     <!-- NOTE: Below script can't be placed before react cdn script, It will throw an error otherwise -->
-    <script src="./App.js"></script>        
+    <!-- Below script will be treated as a normal browser script and it will show error after we import React in App.js file.To avoid
+         this, we mention type as 'module' , App.js will be considered as a module -->
+    <script type='module' src="./App.js"></script>        
 </body>
 
 </html>
