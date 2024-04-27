@@ -1,0 +1,44 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid orange;
+    padding: 0 20px;
+}
+
+.logo{
+    height: 90px;
+    width: 90px;
+}
+
+.nav-items > ul{
+    display: flex;
+    padding: 10px;
+}
+.nav-items > ul > li{
+    margin: 10px;
+    list-style-type: none;
+    font-size: 15px;
+}
+.search{
+    padding: 15px;
+}
+.res-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.res-card{
+    background-color: beige;
+    padding: 5px;
+    margin: 6px;
+    height: 530px;
+    width: 300px;
+}
+.res-card:hover{
+    cursor: pointer;
+    border:0.2px solid red;
+
+}
+.res-logo{
+    width: 100%;
+    height: 60%;
+}
