@@ -42,3 +42,9 @@
     width: 100%;
     height: 60%;
 }
+.filter{
+    margin: 10px;
+}
+.filter-btn{
+    cursor: pointer;
+}
