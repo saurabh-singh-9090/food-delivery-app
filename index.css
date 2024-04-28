@@ -5,6 +5,13 @@
     padding: 0 20px;
 }
 
+.logo-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border: 1px solid orange;
+  padding: 0 20px;
+}
 .logo{
     height: 90px;
     width: 90px;
@@ -28,10 +35,11 @@
 }
 .res-card{
     background-color: beige;
+    border-radius: 10px;
     padding: 5px;
     margin: 6px;
-    height: 530px;
-    width: 300px;
+    height: 510px;
+    width: 250px;
 }
 .res-card:hover{
     cursor: pointer;
@@ -39,12 +47,32 @@
 
 }
 .res-logo{
+    border-radius: 10px;
     width: 100%;
-    height: 60%;
+    height: 50%;
 }
 .filter{
+    display: flex;    
     margin: 10px;
 }
 .filter-btn{
+    cursor: pointer;
+}
+.shimmer-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.shimmer-card {
+    background-color: lightgrey;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 6px;
+    height: 510px;
+    width: 250px;
+}
+.login-btn{
+    height: 30px;
+    width: 60px;
+    color: blue;
     cursor: pointer;
 }
