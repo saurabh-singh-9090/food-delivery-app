@@ -13,17 +13,19 @@ const RestaurantCard = (props) => {
   } = resData?.info;
 
   return (
-    <div className="res-card">
-      <img
-        className="res-logo"
+    <div className="flex flex-col w-[250px] m-3 p-1 bg-gray-100 rounded-md hover:bg-gray-200">
+        <img
+        className="rounded-lg"
         alt="res-logo"
         src={CDN_URL + cloudinaryImageId}
       />
-      <h3>{name}</h3>
-      <p>{cuisines.join(",")}</p>
-      <span>{costForTwo}</span>
-      <h5>{avgRating} stars</h5>
-      <span>Delivery in {deliveryTime} minutes</span>
+      <div className="flex flex-col p-1">
+        <h3 className="font-bold py-1">{name}</h3>
+        <div className=" overflow-x-hidden">{cuisines.join(",")}</div>
+        <span>{costForTwo}</span>
+        <h5>{avgRating} stars</h5>
+        <span>Delivery in {deliveryTime} minutes</span>
+      </div>
     </div>
   );
 };

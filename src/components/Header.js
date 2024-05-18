@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { LOGO_URL } from "../utils/constants";
+// import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import logo from '../assets/brand_logo.png';
 
 const Header = () => {
 
@@ -10,22 +11,22 @@ const Header = () => {
   console.log("onlineStatus----->>>>>",onlineStatus)
 
   return (
-    <div className="logo-container">
-      <div className="header">
-        <img className="logo" src={LOGO_URL} />
+    <div className="flex justify-between px-10 py-2 bg-orange-200">
+      <div className="ml-6">
+        <img className="w-15 h-12" src={logo} />
       </div>
-      <div className="nav-items">
-        <ul>
-          <li>OnlineStatus: {onlineStatus ? '🟢':'🔴'}</li>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/grocery">Grocery</Link></li>
-          <li><Link to="/about">About Us</Link></li>
-          <li><Link to="/contact">Contact Us</Link></li>
-          <li>Cart</li>
+      <div className="flex">
+        <ul className="flex justify-between flex-row p-2 items-center">
+          <li className="px-4">OnlineStatus: {onlineStatus ? '🟢':'🔴'}</li>
+          <li className="px-4"><Link to="/">Home</Link></li>
+          <li className="px-4"><Link to="/grocery">Grocery</Link></li>
+          <li className="px-4"><Link to="/about">About Us</Link></li>
+          <li className="px-4"><Link to="/contact">Contact Us</Link></li>
+          <li className="px-4">Cart</li>
           {/* On clicking login-btn entire Header component re-renders, but only Login btn is changed and rest items are as it is */}
-          <button className="login-btn" onClick={() => btnName === "Login" ? setBtnName("Logout") : setBtnName("Login")}>
+          <li className="px-4" onClick={() => btnName === "Login" ? setBtnName("Logout") : setBtnName("Login")}>
             {btnName}
-          </button>
+          </li>
         </ul>
       </div>
     </div>

@@ -48,12 +48,12 @@ const Body = () => {
   }
 
   return (
-    <div className="body">
-      <div className="filter">
-        <div className="search">
+    <div className="px-200 py-100 mx-10 my-2">
+      <div className="flex justify-center">
+        <div className="search-bar mb-2">
           <input
             type="text"
-            className="search-box"
+            className="border border-orange-500 mx-2 ml-7 p-1 rounded-md"
             value={searchText} // input box is binded with the state variable 'searchText'
             //NOTE: On every onChange event, <Body/> component re-renders but react updates only the input text value on every render
             onChange={(e) => {
@@ -61,6 +61,7 @@ const Body = () => {
             }} // entered input value should update the 'searchText'
           />
           <button
+          className="px-4 py-1 mr-3 bg-orange-200 rounded-md"
             onClick={() => {
               //Filter the restaurant cards and update the UI
               const searchFilteredListOfRestaurants = listOfRestaurants.filter(
@@ -73,9 +74,8 @@ const Body = () => {
           >
             Search
           </button>
-        </div>
         <button
-          className="filter-btn"
+          className="px-4 py-1 bg-green-700 text-white border-r-4 rounded-md"
           onClick={() => {
             //filter logic here
             const filteredListOfRestaurants = listOfRestaurants.filter(
@@ -84,10 +84,11 @@ const Body = () => {
             setListOfRestaurants(filteredListOfRestaurants);
           }}
         >
-          Top Rated Restaurants
+          Filter Top Rated Restaurants
         </button>
+        </div>
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap justify-center">
         {/* Restaurant Card Component */}
         {filteredListOfRestaurants.length === 0 ? (
           <Shimmer />
