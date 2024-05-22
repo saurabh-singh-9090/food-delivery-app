@@ -12,6 +12,7 @@ const Body = () => {
   );
   const [searchText, setSearchText] = useState("");
 
+  //HOC concept
   // const RestaurantWithPromotedLabel = withPromotedLabel(RestaurantCard);
 
   useEffect(() => {
@@ -39,7 +40,7 @@ const Body = () => {
     );
   };
 
-  console.log("RESTAURANT----->>>>",listOfRestaurants)
+  // console.log("RESTAURANT----->>>>",listOfRestaurants)
 
   const onlineStatus = useOnlineStatus();
   if(onlineStatus === false){

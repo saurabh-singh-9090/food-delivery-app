@@ -30,7 +30,7 @@ const RestaurantCard = (props) => {
   );
 };
 
-//Higher Order Component
+// Higher Order Component Concept
 // input-RestaurantCard, Output - RestaurantCardPromoted
 
 // export const withPromotedLabel = (RestaurantCard) => {
