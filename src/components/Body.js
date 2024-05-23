@@ -1,9 +1,10 @@
 import RestaurantCard, {withPromotedLabel} from "./RestaurantCard";
 import resArray from "../utils/mockData";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -11,6 +12,7 @@ const Body = () => {
     []
   );
   const [searchText, setSearchText] = useState("");
+  const {loggedInUser, setUserName} = useContext(UserContext);
 
   //HOC concept
   // const RestaurantWithPromotedLabel = withPromotedLabel(RestaurantCard);
@@ -95,6 +97,14 @@ const Body = () => {
           Filter Top Rated Restaurants
         </button>
         </div>
+        <div className="flex items-center">
+        <label className="mx-2">User Name:</label>
+        <input 
+        className="px-2 border border-black"
+        value={loggedInUser}
+        onChange={(e)=>setUserName(e.target.value)}
+        />
+      </div>
       </div>
       <div className="flex flex-wrap justify-center">
         {/* Restaurant Card Component */}

@@ -31,7 +31,7 @@ class UserClass extends React.Component {
 
   componentWillUnmount(){
     clearInterval(this.timer);
-    crossOriginIsolated.log("componentWillUnmount")
+    console.log("componentWillUnmount")
   }
 
   render() {

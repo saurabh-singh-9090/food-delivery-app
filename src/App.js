@@ -1,4 +1,4 @@
-import React, {lazy, Suspense} from 'react';
+import React, {lazy, Suspense, useEffect, useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import '../index.css';
 import Header from './components/Header';
@@ -11,15 +11,30 @@ import RestaurantMenu from './components/RestaurantMenu';
 // import Grocery from './components/Grocery';
 // Lazy loading for Grocery component
 const Grocery = lazy(() => import('./components/Grocery'))
+import UserContext from './utils/UserContext';
 
 const AppLayout = () => {
-  return(
-    <div className='app'>
-      <Header/>
-      {/* Here, Outlet will be replaced by the children component of AppLayout component based on the route given by the user */}
-      <Outlet/> 
-    </div>
-  )
+
+    const [userName, setUserName] = useState();
+
+    useEffect(()=>{
+        //Some authentication code logic
+        //Make an API call and send username and password
+        const data = {
+            name: "Saurabh Singh",
+        }
+        setUserName(data.name)
+    },[]);
+
+  return (
+    <UserContext.Provider value={{loggedInUser: userName, setUserName}}>
+      <div className="app">
+        <Header />
+        {/* Here, Outlet will be replaced by the children component of AppLayout component based on the route given by the user */}
+        <Outlet />
+      </div>
+    </UserContext.Provider>
+  );
 }
 
 const appRouter = createBrowserRouter([
