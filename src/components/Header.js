@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import logo from '../assets/brand_logo.png';
 import UserContext from '../utils/UserContext'
+import { useSelector } from "react-redux";
 
 const Header = () => {
 
@@ -11,6 +12,10 @@ const Header = () => {
   const onlineStatus = useOnlineStatus();
 
   const {loggedInUser} = useContext(UserContext);
+
+  // Subscribing to the store using a selector
+  const cartItems = useSelector((store) => store.cart.items);
+  console.log("CART Items ------>>>>",cartItems)
 
   return (
     <div className="flex justify-between px-10 py-2 bg-orange-200">
@@ -24,7 +29,7 @@ const Header = () => {
           <li className="px-4"><Link to="/grocery">Grocery</Link></li>
           <li className="px-4"><Link to="/about">About Us</Link></li>
           <li className="px-4"><Link to="/contact">Contact Us</Link></li>
-          <li className="px-4">Cart</li>
+          <li className="px-4"><Link to="/cart">Cart - ({cartItems.length} Items)</Link></li>
           {/* On clicking login-btn entire Header component re-renders, but only Login btn is changed and rest items are as it is */}
           <li className="px-4" onClick={() => btnName === "Login" ? setBtnName("Logout") : setBtnName("Login")}>
             {btnName}
