@@ -82,12 +82,12 @@ const Body = () => {
   return (
     <div className="px-200 py-100 mx-10 my-2">
       <div className="flex justify-center mx-8">
-        <div className="flex justify-center m-2">
-          <div>
+        <div className="flex flex-col sm:flex-row m-2">
+          
             <input
               type="text"
               placeholder="Search for restaurants"
-              className="border border-orange-500 mx-2 mr-0 p-1 rounded-md w-[200px]"
+              className="border border-orange-500 sm:mx-2 mr-2 p-1 rounded-md"
               value={searchText} // input box is binded with the state variable 'searchText'
               //NOTE: On every onChange event, <Body/> component re-renders but react updates only the input text value on every render
               // onChange={(e) => {
@@ -101,26 +101,24 @@ const Body = () => {
                 debounceHandler();
               }}
             />
-            <button
-              className="px-4 py-1 m-1 mr-4 ml-0 bg-red-600 rounded-md text-white"
+            {/* <button
+              className="px-4 py-1 m-1 mr-4 ml-2 bg-red-600 rounded-md text-white hidden"
               onClick={() => searchHandler()}
             >
               Search
-            </button>
+            </button> */}
             
     
             <button
-              className="px-4 py-1 m-1 bg-green-600 text-white border-r-4 rounded-md"
+              className="px-2 py-1 mr-2 my-2 bg-green-600 text-white rounded-md font-normal"
               onClick={() => filterRestaurantHandler()}
             >
-              Filter Top Rated Restaurants
+              Filter Top Restaurants
             </button>
-            </div>
-    
         <div className="flex justify-center m-2 hidden lg:block">
           <label className="mx-2">User Name:</label>
           <input
-            className="px-2 border border-black"
+            className="px-2 border border-black rounded-lg"
             value={loggedInUser}
             onChange={(e) => setUserName(e.target.value)}
           />
