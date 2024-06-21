@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Shimmer from "./Shimmer";
+import ShimmerMenu from "./ShimmerMenu";
 import { useParams } from "react-router-dom";
 import { MENU_API_URL } from "../utils/constants";
 import { useRestaurantMenu } from "../utils/useRestaurantMenu";
@@ -7,27 +7,27 @@ import RestaurantCategory from "./RestaurantCategory";
 
 const RestaurantMenu = () =>{
 
-    const [showIndex, setShowIndex] = useState(null);
+    const [showIndex, setShowIndex] = useState(0);
 
     const {resId} = useParams();
     const resInfo = useRestaurantMenu(resId);
 
     if(resInfo === null){
-        return <Shimmer/>;
+        return <ShimmerMenu/>;
     }
 
     const {name, cuisines, costForTwoMessage} = resInfo?.cards[2]?.card?.card?.info;
     const { itemCards }= resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
-    console.log("itemCards--->>>",resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards)
+    // console.log("itemCards--->>>",resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards)
 
     const categories = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
         c => c.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     )
 
     return resInfo === null ? (
-      <Shimmer />
+      <ShimmerMenu />
     ) : (
-      <div className="flex flex-col border solid border-red-700">
+      <div className="flex flex-col">
         <div className="flex flex-col items-center">
           <h1 className="font-bold text-2xl py-4">{name}</h1>
           <p className="font-bold text-lg">
@@ -43,8 +43,8 @@ const RestaurantMenu = () =>{
           <RestaurantCategory
             key={category?.card?.card?.title}
             data={category?.card?.card}
-            showItems={index === showIndex ? true : false}
-            setShowIndex={() => setShowIndex(index)}
+            setShowIndex={() => { index === showIndex ? setShowIndex(null) : setShowIndex(index)}}
+            showItems={index === showIndex}
           />
         ))}
       </div>

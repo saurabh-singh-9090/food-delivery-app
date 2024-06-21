@@ -15,6 +15,7 @@ import UserContext from './utils/UserContext';
 import { Provider } from "react-redux";
 import appStore from './utils/appStore';
 import Cart from './components/Cart';
+import Footer from './components/Footer';
 
 const AppLayout = () => {
 
@@ -24,7 +25,7 @@ const AppLayout = () => {
         //Some authentication code logic
         //Make an API call and send username and password
         const data = {
-            name: "Saurabh Singh",
+            name: "Saurabh",
         }
         setUserName(data.name)
     },[]);
@@ -32,10 +33,11 @@ const AppLayout = () => {
   return (
     <Provider store={appStore}>
       <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
-        <div className="app">
+        <div className="bg-white">
           <Header />
           {/* Here, Outlet will be replaced by the children component of AppLayout component based on the route given by the user */}
           <Outlet />
+          <Footer/>
         </div>
       </UserContext.Provider>
     </Provider>
@@ -51,18 +53,18 @@ const appRouter = createBrowserRouter([
                 path: "/",
                 element: <Body/>
             },
-            {
-                path: "/about",
-                element: <About/>
-            },
-            {
-                path: "/contact",
-                element: <ContactUs/>
-            },
-            {
-                path: "/grocery",
-                element:<Suspense fallback={<h1>Loading......</h1>}><Grocery/></Suspense> 
-            },
+            // {
+            //     path: "/about",
+            //     element: <About/>
+            // },
+            // {
+            //     path: "/contact",
+            //     element: <ContactUs/>
+            // },
+            // {
+            //     path: "/grocery",
+            //     element:<Suspense fallback={<h1>Loading......</h1>}><Grocery/></Suspense> 
+            // },
             {
                 path: "/restaurants/:resId",
                 element: <RestaurantMenu/>
