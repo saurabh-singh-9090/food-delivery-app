@@ -1,9 +1,12 @@
-# Online Food Delivery Website with live Swiggy API data
+# Online Food Delivery Website using live Swiggy API data
 
-![image](https://github.com/saurabh-singh-9090/food-ordering-app/assets/164728355/9d1e9c2e-9f5c-4d7f-913b-26da313f0f5b)
+# Live Website Demo
+https://food-delivery-app-online.netlify.app/
 
-![image](https://github.com/saurabh-singh-9090/food-ordering-app/assets/164728355/e14c7697-f427-41e0-9abf-c084923eaa51)
+# Website Snapshots
 
-![image](https://github.com/saurabh-singh-9090/food-ordering-app/assets/164728355/be979ccc-fe85-42b0-80ab-566e96587851)
+<img width="1726" alt="image" src="https://github.com/saurabh-singh-9090/food-delivery-app/assets/164728355/8f09e5af-e2b0-431e-a9c6-284794cc81d8">
 
-![image](https://github.com/saurabh-singh-9090/food-ordering-app/assets/164728355/bec3deac-1740-46a7-8c33-5a3ba3c58a35)
+<img width="1721" alt="image" src="https://github.com/saurabh-singh-9090/food-delivery-app/assets/164728355/4797e396-3d46-49bb-baac-877e1255cd5a">
+
+<img width="1715" alt="image" src="https://github.com/saurabh-singh-9090/food-delivery-app/assets/164728355/751d8c8c-bc91-458a-9422-6be3dfc436a6">
