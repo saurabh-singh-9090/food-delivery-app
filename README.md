@@ -3,7 +3,7 @@
 # Live Website Demo
 https://food-delivery-app-online.netlify.app/
 
-# Website Snapshots
+# Website Pages Snapshots
 
 <img width="1726" alt="image" src="https://github.com/saurabh-singh-9090/food-delivery-app/assets/164728355/8f09e5af-e2b0-431e-a9c6-284794cc81d8">
 
