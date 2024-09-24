@@ -81,6 +81,6 @@ const appRouter = createBrowserRouter([
 // Every rendering in React will happen inside root node
 const root = ReactDOM.createRoot(document.getElementById("root"));  
 
-// While rendering on the browser, the React element object gets converted into html element
+// While rendering on the browser, the React element object gets converted into html element 
 // root.render(jsxHeading);
 root.render(<RouterProvider router={appRouter}/>)
