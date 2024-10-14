@@ -1,4 +1,4 @@
-# Online Food Delivery Website using live Swiggy API data
+# Online Food Delivery Website using live Swiggy production API data
 
 # Live Website Demo
 https://food-delivery-app-online.netlify.app/
